@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_15_142836) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_03_104151) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "color"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["title", "deleted_at"], name: "index_projects_on_title_and_deleted_at", unique: true
+  end
 
   create_table "tickets", force: :cascade do |t|
     t.string "title"
