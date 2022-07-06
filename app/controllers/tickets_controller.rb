@@ -10,7 +10,7 @@ class TicketsController < ApplicationController
   def create
     ticket = Ticket.new(ticket_params)
     ticket.save!
-    redirect_to(tickets_url, notice: "タスク「#{ticket.title}」を登録しました。")
+    redirect_to(tickets_url, notice: "#{Ticket.model_name.human}「#{ticket.title}」を登録しました。")
   end
 
   private
