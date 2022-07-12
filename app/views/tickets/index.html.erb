@@ -11,7 +11,7 @@
   <% @tickets.each do |t| %>
     <tr>
       <td>
-        <%= check_box nil, nil, { checked: t.is_completed , readonly: true }, true, false %>
+        <%= check_box nil, nil, { checked: t.is_completed }, true, false %>
       </td>
       <td><%= t.title %></td>
       <td><%= t.body %></td>
