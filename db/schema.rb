@@ -24,10 +24,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_03_114645) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.text "body"
     t.datetime "due_date"
-    t.boolean "is_completed"
+    t.boolean "is_completed", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
