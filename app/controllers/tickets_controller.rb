@@ -9,6 +9,11 @@ class TicketsController < ApplicationController
 
   def create
     ticket = Ticket.new(ticket_params)
+
+    user = User.first
+    ticket.created_by = user.id
+    ticket.updated_by = user.id
+    ticket.project_id = Project.first.id
     ticket.save!
     redirect_to(tickets_url, notice: "#{Ticket.model_name.human}「#{ticket.title}」を登録しました。")
   end
