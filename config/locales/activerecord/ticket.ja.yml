@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      ticket: 'タスク'
+
+    attributes:
+      ticket:
+        title: 'タイトル'
+        body: '詳細'
+        due_date: '締切日'
+        is_completed: '完了'
+        created_by: '作成者'
+        updated_by: '更新者'
+        project_id: 'プロジェクト'

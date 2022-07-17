@@ -1,8 +1,29 @@
-<h1>Tickets#index</h1>
-<p>Find me in app/views/tickets/index.html.erb</p>
-<% @tickets.each do |t| %>
-  <%= t.title %>
-  <%= t.body %>
-  <%= t.is_completed %>
-  <%= t.due_date %>
-<% end%>
+<h1><%= Ticket.model_name.human%>一覧</h1>
+
+<table>
+  <tr>
+    <th><%= Ticket.human_attribute_name('is_completed')%></th>
+    <th><%= Ticket.human_attribute_name('title')%></th>
+    <th><%= Ticket.human_attribute_name('body')%></th>
+    <th><%= Ticket.human_attribute_name('due_date')%></th>
+    <th><%= Ticket.human_attribute_name('created_by')%></th>
+    <th><%= Ticket.human_attribute_name('updated_by')%></th>
+    <th><%= Ticket.human_attribute_name('project_id')%></th>
+  </tr>
+
+  <% @tickets.each do |t| %>
+    <tr>
+      <td>
+        <%= check_box nil, nil, { checked: t.is_completed }, true, false %>
+      </td>
+      <td><%= t.title %></td>
+      <td><%= t.body %></td>
+      <td><%= t.due_date %></td>
+      <td><%= t.created_user.full_name %></td>
+      <td><%= t.updated_user.full_name %></td>
+      <td><%= t.project.title %></td>
+    </tr>
+  <% end%>
+</table>
+
+<%= link_to '新規登録', new_ticket_path, class: 'btn btn-primary' %>
