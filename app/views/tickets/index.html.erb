@@ -6,6 +6,9 @@
     <th><%= Ticket.human_attribute_name('title')%></th>
     <th><%= Ticket.human_attribute_name('body')%></th>
     <th><%= Ticket.human_attribute_name('due_date')%></th>
+    <th><%= Ticket.human_attribute_name('created_by')%></th>
+    <th><%= Ticket.human_attribute_name('updated_by')%></th>
+    <th><%= Ticket.human_attribute_name('project_id')%></th>
   </tr>
 
   <% @tickets.each do |t| %>
@@ -16,6 +19,9 @@
       <td><%= t.title %></td>
       <td><%= t.body %></td>
       <td><%= t.due_date %></td>
+      <td><%= t.created_user.full_name %></td>
+      <td><%= t.updated_user.full_name %></td>
+      <td><%= t.project.title %></td>
     </tr>
   <% end%>
 </table>

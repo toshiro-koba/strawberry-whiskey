@@ -14,4 +14,7 @@
 #  project_id   :integer          not null
 #
 class Ticket < ApplicationRecord
+  belongs_to :project
+  belongs_to :created_user, class_name: 'User', primary_key: 'id', foreign_key: 'created_by'
+  belongs_to :updated_user, class_name: 'User', primary_key: 'id', foreign_key: 'updated_by'
 end
