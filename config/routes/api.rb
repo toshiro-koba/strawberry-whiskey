@@ -1,10 +1,5 @@
 namespace :api do
-  get '/students', to: 'students#index'
+  namespace :v1 do
+    get '/tickets', to: 'tickets#index'
+  end
 end
-
-# namespace :api do
-#   get '/students', to: 'students#index'
-#   namespace :dummy do
-#     resources :hoges
-#   end
-# end
