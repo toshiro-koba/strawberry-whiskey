@@ -14,7 +14,10 @@
   <% @tickets.each do |t| %>
     <tr>
       <td>
-        <%= check_box nil, nil, { checked: t.is_completed }, true, false %>
+        <input type="checkbox"
+               id="<%= t.id %>"
+               <%= 'checked="ckecked"' if t.is_completed %>
+               onclick="completionStatus(event, <%= t.id %>)">
       </td>
       <td><%= t.title %></td>
       <td><%= t.body %></td>
