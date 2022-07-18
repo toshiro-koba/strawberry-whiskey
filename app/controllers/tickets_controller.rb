@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   def index
-    @tickets = Ticket.all
+    @tickets = Ticket.eager_load(:created_user, :updated_user, :project).all
   end
 
   def new
