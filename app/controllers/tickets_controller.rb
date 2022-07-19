@@ -1,4 +1,6 @@
 class TicketsController < ApplicationController
+  before_action :authenticate_user!, only: [:new]
+
   def index
     @tickets = Ticket.eager_load(:created_user, :updated_user, :project).all.order(id: :desc)
   end
