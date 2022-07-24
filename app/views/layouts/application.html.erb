@@ -14,6 +14,8 @@
   <body>
     <% if user_signed_in? %>
       <%= "user: #{current_user.full_name}" %>
+    <% else %>
+      <%= link_to 'ログイン', new_user_session_path, class: 'btn' %>
     <% end %>
 
     <%= yield %>
