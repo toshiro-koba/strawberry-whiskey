@@ -16,5 +16,5 @@
 #  index_projects_on_title_and_deleted_at  (title,deleted_at) UNIQUE
 #
 class Project < ApplicationRecord
-  has_many :tickets
+  has_many :tickets, dependent: :destroy
 end
