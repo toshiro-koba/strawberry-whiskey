@@ -19,4 +19,5 @@ jobs:
         with:
           rubocop_version: gemfile
           rubocop_extensions: rubocop-rails:gemfile rubocop-rspec:gemfile  rubocop-performance:gemfile
-          reporter: github-pr-check # Default is github-pr-check
+          reporter: github-pr-review # Default is github-pr-check
+          fail_on_error: true
