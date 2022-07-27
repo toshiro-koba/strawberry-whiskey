@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: user_roles
@@ -14,7 +16,6 @@
 #  index_user_roles_on_project_id_and_user_id  (project_id,user_id) UNIQUE
 #
 class UserRole < ApplicationRecord
-
   enum role_cd: {
     operator: 10,
     admin: 100
