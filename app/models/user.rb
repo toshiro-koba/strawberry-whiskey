@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -24,9 +26,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :tickets
+  has_many :tickets, dependent: :destroy
 
   def full_name
-    "#{self.last_name} #{self.first_name}"
+    "#{last_name} #{first_name}"
   end
 end

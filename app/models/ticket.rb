@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: tickets
@@ -15,6 +17,6 @@
 #
 class Ticket < ApplicationRecord
   belongs_to :project
-  belongs_to :created_user, class_name: 'User', primary_key: 'id', foreign_key: 'created_by'
-  belongs_to :updated_user, class_name: 'User', primary_key: 'id', foreign_key: 'updated_by'
+  belongs_to :created_user, class_name: 'User', primary_key: 'id', foreign_key: 'created_by', inverse_of: :tickets
+  belongs_to :updated_user, class_name: 'User', primary_key: 'id', foreign_key: 'updated_by', inverse_of: :tickets
 end

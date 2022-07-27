@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateProjects < ActiveRecord::Migration[7.0]
   def change
     create_table :projects do |t|
@@ -8,6 +10,6 @@ class CreateProjects < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    add_index :projects, %i(title deleted_at), unique: true
+    add_index :projects, %i[title deleted_at], unique: true
   end
 end
