@@ -22,3 +22,4 @@ jobs:
           reporter: github-pr-review # Default is github-pr-check
           fail_on_error: true
           rubocop_flags: --fail-level=warning
+          github_token: ${{ secrets.github_token }}
