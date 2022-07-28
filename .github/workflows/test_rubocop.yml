@@ -19,7 +19,7 @@ jobs:
         with:
           rubocop_version: gemfile
           rubocop_extensions: rubocop-rails:gemfile rubocop-rspec:gemfile  rubocop-performance:gemfile
-          reporter: github-pr-review # Default is github-pr-check
+          reporter: github-check
           fail_on_error: true
           rubocop_flags: --fail-level=warning
           github_token: ${{ secrets.github_token }}
