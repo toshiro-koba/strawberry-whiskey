@@ -3,6 +3,10 @@ require:
   - rubocop-performance
   - rubocop-rails
 
+
+AllCops:
+  NewCops: enable
+
 Metrics/BlockLength:
   Max: 50 # default 50
 
